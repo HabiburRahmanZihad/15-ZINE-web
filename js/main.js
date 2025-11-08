@@ -208,16 +208,20 @@ glbStickyPart();
 // ==========categoryStickyPart code=========== //
 function categoryStickyPart() {
     var categoryStickyPart = document.querySelector("#categoryStickyPart");
-    window.addEventListener('scroll', () => {
-        let scrollValue = Math.ceil(scrollY);
-        // console.log(scrollValue);
-        if (scrollValue > 795 && scrollValue < 3092) {
+    if (!categoryStickyPart) {
+        return;
+    }
+
+    function updateStickyState() {
+        if (window.innerWidth >= 992) {
             categoryStickyPart.classList.add("postpositionClass");
         } else {
             categoryStickyPart.classList.remove("postpositionClass");
         }
+    }
 
-    });
+    updateStickyState();
+    window.addEventListener('resize', updateStickyState);
 }
 categoryStickyPart();
 

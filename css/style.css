@@ -57,11 +57,12 @@ a {
 }
 
 .postpositionClass {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 11%;
-    width: calc(100% - 75.1%);
+    position: sticky;
+    top: 120px;
+    width: 100%;
+    right: auto;
+    transform: none;
+    align-self: flex-start;
 }
 
 
@@ -701,6 +702,8 @@ a {
     display: flex;
     align-items: center;
     gap: 14px;
+    flex-wrap: wrap;
+    row-gap: 4px;
 }
 
 .latest-fashion-pst .fashion-post-dtl span {
@@ -721,11 +724,12 @@ a {
 
 .latest-fashion-pst .fashion-pst-category ul {
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .latest-fashion-pst .fashion-pst-category ul li a {
     display: inline-block;
-    margin-right: 10px;
     background-color: #f2f2f2;
     font-size: 10px;
     letter-spacing: 0.1em;
@@ -733,7 +737,7 @@ a {
     text-transform: uppercase;
     color: #777;
     text-align: center;
-    padding: 10px;
+    padding: 8px 12px;
     font-weight: 700;
     transition: all 0.2s ease;
 }
@@ -748,12 +752,22 @@ a {
 
 .fullwidth-sec {
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .fullwidth-items {
     position: relative;
     background-color: #000;
+    flex: 1 1 360px;
+    min-width: 280px;
+    overflow: hidden;
 }
+.fullwidth-items a {
+    display: block;
+    height: 100%;
+}
+
 
 .fullwidth-items a img {
     display: block;
@@ -772,7 +786,7 @@ a {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    padding: 0 78px;
+    padding: clamp(1rem, 5vw, 4rem);
     z-index: 9999;
 }
 
@@ -790,6 +804,7 @@ a {
     letter-spacing: 2px;
     font-weight: 700;
     text-transform: uppercase;
+    font-size: clamp(1.5rem, 2.5vw, 2.75rem);
 }
 
 
